@@ -152,6 +152,56 @@ function CountdownTimer() {
   )
 }
 
+function FAQItem() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <div className="border border-blue-500/30 rounded-xl overflow-hidden">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full px-6 py-4 text-left flex items-center justify-between bg-slate-800/50 hover:bg-slate-800/70 transition-colors duration-300"
+      >
+        <span className="text-xl md:text-2xl font-semibold text-white">
+          Что мне подарить?
+        </span>
+        <svg
+          className={`w-6 h-6 text-blue-300 transition-transform duration-500 ease-in-out ${isOpen ? 'rotate-180' : ''}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        className={`grid transition-all duration-500 ease-in-out ${
+          isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className={`px-6 bg-slate-800/30 transition-all duration-500 ease-in-out ${
+            isOpen ? 'py-4' : 'py-0'
+          }`}>
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                В этом году я собираю деньги на подарок, который я хочу купить себе очень давно! Так что, будет круто, если ты поддержишь меня) <br />
+                Подарок можно отправить мне на карту по номеру телефона или{' '}
+                <a 
+                  href="https://tbank.ru/cf/mskIMI3jsw" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline transition-colors duration-200"
+                >
+                  по этой ссылке
+                </a>
+                {' '}❤️
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function App() {
   const [isVisible, setIsVisible] = useState(false)
   const [imageError, setImageError] = useState(false)
@@ -249,6 +299,13 @@ function App() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-8 px-4">
+        <div className={`max-w-4xl mx-auto transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <FAQItem />
         </div>
       </section>
 
