@@ -184,7 +184,7 @@ function FAQItem() {
           }`}>
             <p className="text-base md:text-lg text-gray-300 leading-relaxed">
                 В этом году я собираю деньги на подарок, который я хочу купить себе очень давно! Так что, будет круто, если ты поддержишь меня) <br />
-                Подарок можно отправить мне на карту по номеру телефона или{' '}
+                Подарок можно отправить мне{' '}
                 <a 
                   href="https://tbank.ru/cf/mskIMI3jsw" 
                   target="_blank" 
@@ -193,7 +193,9 @@ function FAQItem() {
                 >
                   по этой ссылке
                 </a>
-                {' '}❤️
+                {' '}
+                или на карту по номеру телефона
+                ❤️
             </p>
           </div>
         </div>
@@ -266,7 +268,7 @@ function App() {
             <div className="mt-8 pt-8 border-t border-indigo-500/30">
               <div className="text-center">
                 <p className="text-xl md:text-2xl text-white font-semibold mb-2">
-                  13 декабря 2025, 19:00
+                  13 декабря, в 19:00
                 </p>
                 <p className="text-gray-300 text-base md:text-lg">
                   Суббота • Тагильское время
